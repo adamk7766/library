@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Lista autorów</h1>
+
+<p th:if="${message}" id="message"
+   th:text="${message}"/>
+
+
+
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Show</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Number of Books</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="author: ${authors}">
+        <td th:text="${author.name}"/>
+        <td th:text="${author.surname}"/>
+        <td><a th:href="@{'/authors/'+${author.id}}" th:text="${author.name}"/></td>
+        <td><a th:href="@{'/authors/'+${author.id}+'/edit'}"> Edit </a></td>
+        <td><a th:href="@{'/authors/'+${author.id}+'/delete'}"> Delete </a></td>
+        <td><span th:text="${author.getNumberOfBooks()}"/></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/authors/add">Dodaj nowego Authora</a>
+
+
+
+</body>
+</html>

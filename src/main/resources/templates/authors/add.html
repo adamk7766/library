@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:action="@{/authors}" th:method="post" th:object="${author}">
+    <input type="hidden" th:field="*{id}">
+    <label>Imię:</label>
+    <input type="text" th:value="${author.name}"
+           th:field="*{name}">
+    <label>Nazwisko:</label>
+    <input type="text" th:value="${author.surname}"
+           th:field="*{surname}">
+    <input type="submit" th:value="Save">
+</form>
+
+
+</body>
+</html>
