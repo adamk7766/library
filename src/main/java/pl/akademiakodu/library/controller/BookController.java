@@ -23,7 +23,7 @@ public class BookController {
     @GetMapping("/")
     private String showIndex(ModelMap modelMap) {
         modelMap.addAttribute("books", bookRepository.findAll());
-        return "books/index";
+        return "books/bookslist";
     }
 
     @GetMapping("/books/add")
@@ -42,7 +42,7 @@ public class BookController {
     @GetMapping("/books")
     public String index(ModelMap modelMap) {
         modelMap.addAttribute("books", bookRepository.findAll());
-        return "books/index";
+        return "books/bookslist";
     }
 
     @GetMapping("books/{id}")

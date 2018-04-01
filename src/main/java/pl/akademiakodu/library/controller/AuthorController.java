@@ -33,7 +33,7 @@ public class AuthorController {
     @GetMapping("/authors")
     public String index(ModelMap modelMap){
         modelMap.addAttribute("authors",authorRepository.findAll());
-        return "authors/index";
+        return "authors/authorslist";
     }
 
     @GetMapping("authors/{id}/edit")

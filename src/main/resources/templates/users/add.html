@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+</head>
+<body>
+
+<header id="navbar_users" class="alt" th:include="fragments/fragments :: navbar_users">
+</header>
+
+<h1>Dodawanie urzytkowników</h1>
+
+<form th:action="@{/users}" th:method="post" th:object="${user}">
+    <input type="hidden" th:field="*{id}">
+    <label>Imię:</label>
+    <input type="text" th:value="${user.name}"
+           th:field="*{name}">
+    <label>Nazwisko:</label>
+    <input type="text" th:value="${user.surname}"
+           th:field="*{surname}">
+    <input type="submit" th:value="Save">
+</form>
+
+<div id="footer" class="alt" th:include="fragments/fragments :: footer">
+</div>
+</body>
+</html>
