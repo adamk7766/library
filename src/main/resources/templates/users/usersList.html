@@ -19,8 +19,7 @@
 </head>
 <body>
 
-<header id="navbar_users" class="alt" th:include="fragments/fragments :: navbar_users">
-</header>
+
 
 <h1>Lista użytkowników</h1>
 
@@ -43,18 +42,17 @@
     <tr th:each="user: ${users}">
         <td th:text="${user.name}"/>
         <td th:text="${user.surname}"/>
-        <td><a th:href="@{'/users/'+${user.id}}"><img src="icon.png" alt="edite icon"></a></td>
-        <td><a th:href="@{'/users/'+${user.id}+'/edit'}"><img src="edit_icon.png" alt="edit icon"></a></td>
-        <td><a th:href="@{'/users/'+${user.id}+'/delete'}"class="confirm"><img src="delete_icon.png" alt="delete icon"></a></td>
-        <td><span th:text="${user.getNumberOfNotes()}"class="center"/></td>
-        <td><span th:text="${user.getNumberOfTasks()}"class="center"/></td>
+        <td><a th:href="@{'/users/'+${user.id}}">Podgląd</td>
+        <td><a th:href="@{'/users/'+${user.id}+'/edit'}">Edycja</a></td>
+        <td><a th:href="@{'/users/'+${user.id}+'/delete'}"class="confirm">Usuń</a></td>
+        <!--<td><span th:text="${user.getNumberOfNotes()}"class="center"/></td>
+        <td><span th:text="${user.getNumberOfTasks()}"class="center"/></td>-->
     </tr>
     </tbody>
 </table>
 <a href="/users/add">Dodaj nowego Użytkownika</a>
 
 
-<div id="footer" class="alt" th:include="fragments/fragments :: footer">
-</div>
+
 </body>
 </html>

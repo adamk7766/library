@@ -8,23 +8,11 @@
 </head>
 <body>
 
-<header id="navbar_users" class="alt" th:include="fragments/fragments :: navbar_users">
-</header>
+
 
 <h1 th:text="${user}"></h1>
 
-<h2>Notatki</h2>
 
-<ol>
-    <li th:each="note : ${user.notes}" th:text="${note}"/>
-</ol>
 
-<h2>Zadania</h2>
-
-<ol>
-    <li th:each="task : ${user.tasks}" th:text="${task}"/>
-</ol>
-<div id="footer" class="alt" th:include="fragments/fragments :: footer">
-</div>
 </body>
 </html>
