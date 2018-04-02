@@ -20,11 +20,6 @@ public class BookController {
     @Autowired
     private AuthorRepository authorRepository;
 
-    @GetMapping("/")
-    private String showIndex(ModelMap modelMap) {
-        modelMap.addAttribute("books", bookRepository.findAll());
-        return "books/bookslist";
-    }
 
     @GetMapping("/books/add")
     public String add(ModelMap modelMap) {

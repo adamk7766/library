@@ -13,8 +13,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/css/**", "/index").permitAll()
-                .antMatchers("/authors/**").hasRole("USER")
+                .antMatchers("/css/**", "/index", "/books").permitAll()
+                .antMatchers("/authors/**", "/users", "/user/index", "/books/add").hasRole("USER")
                 .and()
                 .formLogin()
                 .loginPage("/login").failureUrl("/login-error")
