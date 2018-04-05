@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <title>Hello Spring Security</title>
     <meta charset="utf-8" />
@@ -9,5 +10,16 @@
 <div th:substituteby="index::logout"></div>
 <h1>This is a secured page!</h1>
 <p><a href="/index" th:href="@{/index}">Back to home page</a></p>
+
+<div sec:authorize="isAuthenticated()">
+    Logged in user: <span sec:authentication="name"></span> |
+    Roles: <span sec:authentication="principal.authorities"></span>
+    <div>
+        <form action="#" th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout" />
+        </form>
+    </div>
+</div>
+
 </body>
 </html>

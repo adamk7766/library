@@ -3,6 +3,7 @@ package pl.akademiakodu.library;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 @SpringBootApplication
 public class LibraryApplication {
 
@@ -10,3 +11,4 @@ public class LibraryApplication {
 		SpringApplication.run(LibraryApplication.class, args);
 	}
 }
+
